@@ -1,0 +1,1392 @@
+@import url('https://fonts.googleapis.com/css2?family=Lateef:wght@400;500;600;700&display=swap');
+:root {
+    --blue-color: #0075ff;
+    --blue-alt-color: #0d69d5;
+    --orange-color: #f59e0b;
+    --green-color: #22c55e;
+    --red-color: #f44336;
+    --grey-color: #888;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--blue-color);
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--blue-alt-color);
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #eee;
+}
+
+/* Start Sidebar */
+
+.sidebar {
+    width: 250px;
+    box-shadow: 0 0 10px #ddd;
+}
+.sidebar > h3 {
+    font-size: 23px;
+    margin-bottom: 50px;
+    font-family: 'Lateef', serif;
+}
+.sidebar > h3::before,
+.sidebar > h3::after {
+    content: "";
+    background-color: black;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.sidebar > h3::before {
+    width: 120px;
+    height: 2px;
+    top: 60px;
+}
+.sidebar > h3::after {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    top: 55px;
+    border: 4px solid rgb(0, 0, 0);
+}
+
+.sidebar ul li a{
+    transition: 0.3s;
+    margin-bottom: 5px;
+    border-radius: 0;
+    border-radius: 0 6px 6px 0;
+    font-weight: bold;
+}
+.sidebar ul li a.active{
+    color: var(--blue-color);
+}
+.sidebar ul li a.active::after{
+    content: "";
+    width: 5px;
+    height: 45.5px;
+    background-color: var(--blue-color);
+    position: absolute;
+    left: 15px;
+}
+.sidebar ul li a:hover,
+.sidebar  ul li .active{
+    background-color: #f0eeee;
+}
+.sidebar ul li a span{
+    font-size: 17px;
+    margin-right: 10px;
+}
+
+@media (max-width: 767px) {
+    .sidebar {
+        width: 60px;
+        padding: 10px;
+    }
+    .sidebar > h3 {
+        font-size: 10px;
+        margin-bottom :15px;
+        
+    }
+    .sidebar > h3::before,
+    .sidebar > h3::after {
+        display: none;
+    }
+    .sidebar ul li a span {
+        display: none;
+    }
+    .sidebar ul li a.active::after {
+        display: none;
+    }
+
+}
+
+/* End Sidebar */
+
+/* Start Content Head*/
+
+.content {
+    overflow: hidden;
+}
+.head .icons span {
+    cursor: pointer;
+}
+.head .icons span:hover {
+    color: #f05454;
+    transition: 0.3s;
+}
+.head .icons span {
+    cursor: pointer;
+}
+.head .icons .notification::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--red-color);
+    border-radius: 50%;
+    right: -5px;
+    top: -5px;
+}
+.head .icons .notification p.alarm {
+    display: none;
+    top: 0;
+    right: 30px;
+    color: #f05454;
+    border: 1px solid #f05454;
+}
+.head .icons .notification i:hover + p.alarm {
+    display: block;
+    transition: 0.3s;
+}
+.head .icons a {
+    background-color: var(--blue-color);
+    color: white;
+    width: 100px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+}
+.head .icons a:hover {
+    background-color: var(--blue-alt-color);
+    transition: 0.3s;
+}
+
+/* Start Style Page Register */
+
+.interface-register
+{
+    border: 3px solid #bc3d11;
+}
+.interface-register i.hide
+{
+    background-color: #bc3d11;
+    border-radius: 0 0 0 6px;
+    width: 10%;
+}
+.interface-register i.hide:hover
+{
+    background-color: transparent;
+    transition: 0.3s;
+}
+.interface-register form input
+{
+    border: 1px solid #bc3d11;
+    color: #bc3d11;
+}
+.interface-register form input:focus
+{
+    outline: none;
+    border: 2px solid #bc3d11;
+}
+.interface-register form input::placeholder
+{
+    font-size: 25px;
+    padding-right: 8px;
+}
+.interface-register button
+{
+    background-color: #bc3d11;
+}
+.interface-register button:hover {
+    background-color: #B78f3f;
+    transition: 0.5s;
+}
+
+
+/* End Style Page Register */
+
+.page h1 {
+    margin: 20px 20px 40px;
+}
+.page h1::before,
+.page h1::after {
+    content: "";
+    height: 3px;
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+}
+.page h1::before {
+    background-color: white;
+    width: 120px;
+}
+.page h1::after {
+    background-color: black;
+    width: 40px;
+}
+
+/* End Content Head*/
+
+/* Start Wrapper */
+
+.wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+    .wrapper {
+        grid-template-columns: minmax(200px, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 10px;
+    }
+    .interface-register {
+        width: 60%;
+    }
+    .interface-register i.hide{
+        width: 15%;
+    }
+}
+
+/* End Wrapper */
+
+/* Start Welcome */
+
+.welcome, .vehicles, .cameras, .tours, .events, .actions, .photos {
+    overflow: hidden;
+}
+.welcome .intro h2 {
+    background-color: #64974e;
+    color: white;
+}
+.body {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+.welcome .body {
+    color: #191d23;
+    font-size: 30px;
+}
+.welcome .body div:nth-child(2) i:hover {
+    color: #0075ff;
+}
+.welcome .body div:nth-child(4) i:hover {
+    color: #f05454;
+}
+.welcome .body > div{
+    flex: 1;
+}
+/* Start Style Add Drivers */
+
+.interface-add-driver,
+.interface-del-driver
+{
+    background-color: #f1f1f1;
+    border: 3px solid var(--blue-color);
+}
+.interface-add-driver i.hide,
+.interface-del-driver i.hide
+{
+    background-color: #0075ff;
+    border-radius: 0 0 0 6px;
+}
+.interface-add-driver i.hide:hover,
+.interface-del-driver i.hide:hover
+{
+    background-color: transparent;
+    color: #000;
+    transition: 0.3s;
+}
+.interface-add-driver form input,
+.interface-del-driver form input
+{
+    border: 1px solid #0075ff;
+    color: #6b6b6b;
+}
+.interface-add-driver form input:focus,
+.interface-del-driver form input:focus
+{
+    outline: none;
+    border: 2px solid #0075ff;
+}
+.interface-add-driver form input::placeholder,
+.interface-del-driver form input::placeholder
+{
+    font-size: 25px;
+    color: #0075ff;
+    padding-right: 8px;
+}
+.interface-add-driver button,
+.interface-del-driver button
+{
+    background-color: #64974e;
+}
+.interface-add-driver button:hover {
+    background-color: #191d23;
+    transition: 0.5s;
+}
+.interface-del-driver button:hover {
+    background-color: #ef4444;
+    transition: 0.5s;
+}
+
+/* End Style Add Drivers */
+
+.welcome div.photo {
+    width: 100%;
+    background-color: #cacacac4;
+}
+.welcome div img {
+    width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+a.more:hover {
+    background-color: var(--blue-alt-color);
+    color: white;
+}
+a.more i {
+    opacity: 0;
+    margin-left: 10px;
+}
+a.more:hover i {
+    opacity: 1;
+    transform: translate(-6px);
+    transition: opacity 0.3s, transform 0.5s;
+}
+
+/* vehicles */
+
+.vehicles h2:first-child {
+    background-color: #495159;
+}
+.vehicles div.text {
+    background-color: #87c;
+    padding-top: 21px;
+    padding-bottom: 21px;
+}
+.vehicles .add-del a {
+    background-color: #191d23;
+}
+.vehicles .add-del a:first-child:hover {
+    background-color: #0075ff;
+    color: white;   
+}
+.vehicles .add-del a:nth-child(3):hover {
+    background-color: #f05454;
+    color: white;   
+}
+
+/* Start Style Add Vehicle */
+
+.interface-add-vehicle,
+.interface-del-vehicle
+{
+    background-color: #87c;
+    border: 3px solid #495159;
+}
+.interface-del-vehicle {
+    width: 395px;
+}
+.interface-add-vehicle i.hide,
+.interface-del-vehicle i.hide
+{
+    background-color: #495159;
+    border-radius: 0 0 0 6px;
+    width: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+.interface-add-vehicle i.hide:hover,
+.interface-del-vehicle i.hide:hover
+{
+    background-color: transparent;
+    transition: 0.3s;
+}
+.interface-add-vehicle form input,
+.interface-del-vehicle form input
+{
+    border: 1px solid #495159;
+    color: #495159;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.interface-add-vehicle form input:focus,
+.interface-del-vehicle form input:focus
+{
+    outline: none;
+    border: 2px solid #495159;
+}
+.interface-add-vehicle form input::placeholder,
+.interface-del-vehicle form input::placeholder
+{
+    font-size: 25px;
+    color: #495159;
+    padding-right: 8px;
+}
+.interface-add-vehicle button,
+.interface-del-vehicle button
+{
+    background-color: #495159;
+}
+.interface-add-vehicle button:hover {
+    background-color: #00438f;
+    transition: 0.5s;
+}
+.interface-del-vehicle button:hover {
+    background-color: #f05454;
+    transition: 0.5s;
+}
+
+/* End Style Add Vehicle */
+
+
+/* End Vehicles Page */
+
+
+/* cameras */
+
+.cameras div h2.private, .all-cam div.num {
+    background-color: #f90124;
+    border-right: 3px solid #191d23;
+}
+.cameras .cam1 {
+    margin-bottom: 7px;
+}
+.cameras .add-camera a {
+    background-color: #ce2650;
+}
+.cameras .add-camera a:first-child:hover {
+    background-color: #191d23;
+    color: white;
+    border-radius: 0;
+    transition: 0.5s;
+}
+.cameras .add-camera a:nth-child(3):hover {
+    background-color: #5273a5;
+    color: white;
+    border-radius: 0;
+    transition: 0.5s;
+}
+.camera .deletCameraButton,
+.camera .editCameraButton 
+{
+    display: block;
+    margin-top: 38px;
+}
+
+
+/* Start Style Add Camera */
+
+.interface-add-camera,
+.interface-del-camera
+{
+    background-color: #f90124;
+    border: 3px solid #191d23;
+}
+.interface-del-camera {
+    width: 395px;
+}
+.interface-add-camera i.hide,
+.interface-del-camera i.hide
+{
+    background-color: #191d23;
+    border-radius: 0 0 0 6px;
+    font-size: 20px;
+}
+.interface-add-camera i.hide:hover,
+.interface-del-camera i.hide:hover
+{
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+.interface-add-camera form input,
+.interface-del-camera form input
+{
+    border: 1px solid #191d23;
+    color: #191d23;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.interface-add-camera form input:focus,
+.interface-del-camera form input:focus
+{
+    outline: none;
+    border: 2px solid #191d23;
+}
+.interface-add-camera form input::placeholder,
+.interface-del-camera form input::placeholder
+{
+    font-size: 23px;
+    color: #191d23;
+    padding-right: 8px;
+}
+.interface-add-camera .state-tour h3
+{
+    color: white;
+}
+.interface-add-camera .state-tour label
+{
+    color: #191d23;
+}
+.interface-add-camera form button,
+.interface-del-camera form button
+{
+    background-color: var(--orange-color);
+}
+.interface-add-camera button:hover {
+    background-color: #191d23;
+    transition: 0.5s;
+}
+.interface-del-camera button:hover {
+    background-color: #5273a5;
+    transition: 0.5s;
+}
+
+/* End Style Add Camera */
+
+
+/* tours */
+
+.tours div h2:first-child {
+    background-color: #998826;
+}
+.tours table, .tours table tr {
+    border: solid 1px;
+}
+.tours table tr td {
+    padding: 3px;
+    width: 120px;
+    font-size: 20px;
+}
+.tours .add-tour {
+    border-top: 1px solid #cecece;
+    border-bottom: 1px solid #cecece;
+}
+.tours .add-tour a button {
+    position: relative;
+    width: 220px;
+    background-color: #998826;
+    height: 55px;    
+}
+.tours .add-tour a.top {
+    display: block;
+    margin-bottom: 22px;
+}
+.tours .add-tour a.top:hover i {
+    background-color: #0075ff;
+}
+.tours .add-tour a.down:hover i {
+    background-color: #f05454;
+}
+.tours .add-tour button i {
+    background-color: #191d23;
+    border-radius: 6px 0 0 6px;
+    padding: 12.5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Start Style Add Tour */
+
+.interface-add-tour,
+.interface-del-tour
+{
+    background-color: #998826;
+    border: 3px solid #191d23;
+}
+.interface-del-tour {
+    width: 395px;
+}
+.interface-add-tour i.hide,
+.interface-del-tour i.hide
+{
+    background-color: #191d23;
+    border-radius: 0 0 0 6px;
+    font-size: 20px;
+}
+.interface-add-tour i.hide:hover,
+.interface-del-tour i.hide:hover
+{
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+.interface-add-tour form input,
+.interface-del-tour form input
+{
+    border: 1px solid #191d23;
+    color: #191d23;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.interface-add-tour form input:focus,
+.interface-del-tour form input:focus
+{
+    outline: none;
+    border: 2px solid #191d23;
+}
+.interface-add-tour form input::placeholder,
+.interface-del-tour form input::placeholder
+{
+    font-size: 23px;
+    color: #191d23;
+    padding-right: 8px;
+}
+.interface-add-tour .state-tour h3
+{
+    color: white;
+}
+.interface-add-tour .state-tour label
+{
+    color: #191d23;
+}
+.interface-add-tour form button,
+.interface-del-tour form button
+{
+    background-color: #434343;
+}
+.interface-add-tour button:hover {
+    background-color: #ceddbb;
+    color: #434343;
+    transition: 0.5s;
+}
+.interface-del-tour button:hover {
+    background-color: #b9375e;
+    transition: 0.5s;
+}
+
+/* End Style Add Tour */
+
+
+
+
+/* events */
+
+.events h2 {
+    background-color: #2d2755;
+}
+.events .small-table th
+{
+    background-color: #488a99;
+}
+.events .small-table {
+    border-spacing: 1;
+    border-collapse: separate;
+    height: 117.5px;
+}
+
+
+/* actions */
+
+.actions h2 {
+    background-color: #52c2d0;
+}
+.actions .title {
+    color: #2d2755;
+    border-top: 1px solid #cecece;
+    border-bottom: 1px solid #cecece;
+}
+.actions .title h3 {
+    margin-top: 5px;
+}
+.actions p {
+    font-size: 20px;
+    color: #ef4444;
+}
+
+
+/* photos */
+
+.photos h2 {
+    background-color: #925428;
+}
+.photos .img-driver {
+    border-top: 1px solid #191d23;
+    border-bottom: 1px solid #191d23;
+}
+.photos .description div > h3 {
+    background-color: #925428;
+    color: white;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+@media (max-width: 767px) {
+    .welcome .intro {
+        padding-bottom: 30px;
+    }
+    .welcome .body {
+        display: block;
+    }
+    .welcome .body > div:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .vehicles .add-del a {
+        width: 100px;
+        font-size: 16px;  
+    }
+    .cameras .all-cam div {
+        font-size: 20px;
+    }
+    .photos i {
+        font-size: 40px;
+    }
+    .photos div:first-child p {
+        font-size: 23px;
+    }
+    .photos .img-driver img {
+        width: 150px;
+        height: 150px;
+    }
+    .interface-add-driver {
+        width: 70%;
+    }
+    .interface-add-driver form input {
+        font-size: 18px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .interface-add-vehicle,
+    .interface-del-vehicle
+    {
+        width: 70%;
+    }
+    .interface-add-tour,
+    .interface-del-tour
+    {
+        width: 70%;
+    }
+    .interface-add-tour .state-tour
+    {
+        text-align: right;
+    }
+}
+
+/* End Welcome Widget */
+
+
+/* Start Page Drivers */
+
+.page-drivers {
+    flex: 1;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+.page-drivers .driver {
+    border: 4px solid #ef4444;
+}
+.page-drivers .driver span {
+    background-color: #ef4444;
+}
+.page-drivers .driver .image-driver {
+    border-bottom: 1px solid #cecece;
+}
+.page-drivers .driver img {
+    border-radius: 50%;
+    border: 1px solid white;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.page-drivers .info-driver h4 {
+    background-color: #f05454;
+    color: #d4d4d4;
+    height: 40px;
+    font-size: 24px;
+}
+.page-drivers .info-driver p {
+    font-size: 17px;
+    height: 40px;
+}
+.Edit-info-driver {
+    padding-top: 80px;
+    border-top: 1px solid #cecece;
+}
+.Edit-info-driver button {
+    background-color: #ef4444;
+    border: none;
+}
+.Edit-info-driver button:first-child {
+    border-radius: 6px 0 0 0 ;
+}
+.Edit-info-driver button:first-child:hover {
+    width: 170px;
+    color: white;
+    transition: 0.7s;
+}
+.Edit-info-driver button:last-child {
+    border-radius: 0 6px 0 0;
+}
+.Edit-info-driver button:last-child:hover {
+    width: 130px;
+    color: white;
+    transition: 0.7s;
+}
+
+/* Start Style Edit Driver */
+
+.interface-edit-driver,
+.interface-delet-driver
+{
+    background-color: #191d23;
+    border: 3px solid #ef4444;
+}
+.interface-delet-driver {
+    width: 395px;
+}
+.interface-edit-driver i.hide,
+.interface-delet-driver i.hide
+{
+    background-color: #ef4444;
+    border-radius: 0 0 0 6px;
+    font-size: 20px;
+}
+.interface-edit-driver i.hide:hover
+{
+    background-color: transparent;
+    transition: 0.3s;
+}
+.interface-edit-driver form input
+{
+    border: 1px solid #ef4444;
+    color: #191d23;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.interface-edit-driver form input:focus
+{
+    outline: none;
+    border: 2px solid #ef4444;
+}
+
+.interface-edit-driver form button
+{
+    background-color: #ef4444;
+}
+.interface-edit-driver button:hover {
+    background-color: #ef4444a8;
+    transition: 0.3s;
+}
+.interface-delet-driver button:first-child {
+    background-color: var(--blue-color);
+}
+.interface-delet-driver button:last-child {
+    background-color: #ef4444;
+}
+.interface-delet-driver button:first-child:hover {
+    background-color: #0077ffa1;
+    transition: 0.3s;
+}
+.interface-delet-driver button:last-child:hover {
+    background-color: #ef4444a8;
+    transition: 0.3s;
+}
+
+
+/* End Style Edit Driver */
+
+@media (max-width: 767px) {
+    .page-drivers {
+        grid-template-columns: minmax(200px, 1fr);
+        gap: 10px;
+    }
+    .name-driver, .address-driver, .phone-driver {
+        display: flex;
+        flex-direction: column;
+    }
+    .page-drivers .info-driver {
+        margin-right: 0;
+    }
+    .page-drivers .info-driver p,
+    .page-drivers .info-driver h4 {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .interface-edit-driver,
+    .interface-delet-driver
+    {
+        width: 300px;
+    }
+    .interface-edit-driver .center-flex,
+    .interface-delet-driver .arround-flex
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+}
+
+/* End Page Drivers */
+
+/* Start Vehicles page */
+
+.page-vehicles {
+    flex: 1;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+.page-vehicles .vehicle {
+    background-color: #4d663d;
+    border: 4px solid #d2a62c;
+    height: 470px;
+}
+.page-vehicles .info-vehicle h4 {
+    background-color: #e1e6e1;
+    width: 60%;
+    padding: 5px 0;
+}
+.page-vehicles .info-vehicle p {
+    color: #e1e6e1;
+    border: 2px solid #d2a62c;
+    border-radius: 6px 6px 0 6px;
+}
+
+.page-vehicles .info-vehicle p::after {
+    content: "";
+    width: 30px;
+    height: 2px;
+    background-color: #d2a62c;
+    position: absolute;
+    right: -32px;
+    bottom: -2px;
+}
+.Edit-info-vehicle button {
+    background-color: #d2a62c;
+}
+.Edit-info-vehicle button:hover {
+    width: 170px;
+    transition: 0.7s;
+}
+.Edit-info-vehicle button:first-child {
+    border-radius: 6px 0 0 0;
+}
+.Edit-info-vehicle button:last-child {
+    border-radius: 6px 0 0 6px;
+    bottom: 50px;
+}
+.vehicle span {
+    background-color: #d2a62c;
+    color: #e1e6e1;
+}
+
+/* Start Style Edit Driver */
+
+.interface-edit-vehicle,
+.interface-delet-vehicle
+{
+    background-color: #4d663d;
+    border: 3px solid #d2a62c;
+}
+.interface-delet-vehicle {
+    width: 395px;
+}
+.interface-edit-vehicle i.hide
+{
+    background-color: #d2a62c;
+    border-radius: 0 0 0 6px;
+    font-size: 20px;
+}
+.interface-edit-vehicle i.hide:hover
+{
+    background-color: transparent;
+    transition: 0.3s;
+}
+.interface-edit-vehicle form input
+{
+    border: 1px solid #d2a62c;
+    color: #191d23;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.interface-edit-vehicle form input:focus
+{
+    outline: none;
+    border: 2px solid #d2a62c;
+}
+
+.interface-edit-vehicle form button
+{
+    background-color: #d2a62c;
+}
+.interface-edit-vehicle button:hover {
+    background-color: #d2a62c81;
+    transition: 0.3s;
+}
+.interface-delet-vehicle button:first-child {
+    background-color: #d2a62c;
+}
+.interface-delet-vehicle button:last-child {
+    background-color: #ef4444;
+}
+.interface-delet-vehicle button:first-child:hover {
+    background-color: #d2a62c8e;
+    transition: 0.3s;
+}
+.interface-delet-vehicle button:last-child:hover {
+    background-color: #ef444493;
+    transition: 0.3s;
+}
+
+
+/* End Style Edit Driver */
+
+
+@media (max-width: 767px) {
+    .page-vehicles {
+        grid-template-columns: minmax(200px, 1fr);
+        gap: 10px;
+    }
+    .page-vehicles .vehicle {
+        height: 460px;
+    }
+    .page-vehicles .info-vehicle p {
+        margin-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .page-vehicles .info-vehicle p::after {
+        display: none;
+    }
+    .vehicle .image-vehicle img {
+        width: 150px;
+    }
+    .vehicle span {
+        width: 40px;
+    }
+    .interface-edit-vehicle,
+    .interface-delet-vehicle
+    {
+        width: 300px;
+    }
+    .interface-edit-vehicle .center-flex,
+    .interface-delet-vehicle .arround-flex
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+
+/* End Vehicles page */
+
+
+
+/* Start Cameras page */
+
+.page-cameras {
+    flex: 1;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));    
+}
+.page-cameras .camera {
+        background-color: #ce4420;
+        border: 4px solid #102030;
+        height: 320px;
+}
+.page-cameras h4 {
+    width: 160px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid white;
+}
+.page-cameras p {
+    word-wrap: break-word;
+    background-color: #102030;
+    padding: 5px;
+}
+.Edit-info-camera button {
+    background-color: #102030;
+}
+.Edit-info-camera button:hover {
+    background-color: #102030be;
+    transition: 0.3s;
+}
+.Edit-info-camera button:first-child {
+    bottom: 50px;
+}
+
+/* Start Style Edit Camera */
+
+.interface-edit-camera,
+.interface-delet-camera
+{
+    background-color: #ce4420;
+    border: 3px solid #102030;
+}
+.interface-edit-camera i.hide
+{
+    background-color: #102030;
+    border-radius: 0 0 0 6px;
+    font-size: 20px;
+}
+.interface-edit-camera i.hide:hover
+{
+    background-color: transparent;
+    transition: 0.3s;
+}
+.interface-edit-camera form input
+{
+    border: 1px solid #102030;
+    color: #191d23;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.interface-edit-camera form input:focus
+{
+    outline: none;
+    border: 2px solid #102030;
+}
+
+.interface-edit-camera form button
+{
+    background-color: #102030;
+}
+.interface-edit-camera button:hover {
+    background-color: #102030ad;
+    transition: 0.3s;
+}
+.interface-delet-camera button:first-child {
+    background-color: #214466;
+}
+.interface-delet-camera button:last-child {
+    background-color: #4b2e39;
+}
+.interface-delet-camera button:first-child:hover {
+    background-color: #102030;
+    transition: 0.3s;
+}
+.interface-delet-camera button:last-child:hover {
+    background-color: #ca282c;
+    transition: 0.3s;
+}
+
+
+/* End Style Edit Camera */
+
+
+/* End Cameras page */
+
+
+
+/* Start Tours page */
+
+.page-tours {
+    flex: 1;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));        
+}
+.page-tours .tour {
+    background-color: #ebe8d2;
+    border: 4px solid #b85043;
+    height: 500px;
+}
+.page-tours span {
+    background-color: #b85043;
+    width: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0 0 6px 6px;
+}
+.page-tours .date-tour {
+    margin-top: 70px;
+}
+.page-tours .date-tour input {
+    background-color: #a9c5b1;
+}
+.img-tour {
+    border-bottom: 1px solid #b85043;
+}
+.page-tours .date-tour h4, .state-tour h3 {
+    color: #b85043;
+}
+.Edit-info-tour button {
+    background-color: #b85043;
+}
+.Edit-info-tour button:hover {
+    background-color: transparent;
+    color: #b85043;
+    border-top: 1px solid #b85043;
+    transition: 0.5s;
+}
+
+/* Start Style Edit Tour */
+
+
+.interface-delet-tour
+{
+    background-color: #ebe8d2;
+    border: 3px solid #b85043;
+}
+.interface-delet-tour button:first-child {
+    background-color: #b85043;
+}
+.interface-delet-tour button:last-child {
+    background-color: #102030;
+}
+.interface-delet-tour button:first-child:hover {
+    background-color: #b85143d0;
+    transition: 0.3s;
+}
+.interface-delet-tour button:last-child:hover {
+    background-color: #102030c4;
+    transition: 0.3s;
+}
+
+
+/* End Style Edit Tour */
+
+@media (max-width: 767px) {
+    .page-tours {
+        grid-template-columns: minmax(200px, 1fr);
+        gap: 10px;
+    }
+    .page-tours .date-tour {
+        display: flex;
+        flex-direction: column;
+    }
+    .page-tours .date-tour input {
+        width: 60%;
+    }
+    .page-tours .date-tour h4 {
+        margin-bottom: 15px;
+    }
+    .img-tour img {
+        width: 150px;
+    }
+    .interface-delet-tour
+    {
+        width: 300px;
+    }
+    .interface-delet-tour .arround-flex
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/* End Tours page */
+
+
+/* Start Events page */
+
+.page-events {
+    flex: 1;
+    grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr));  
+    overflow-x: auto;
+}
+.page-events .event {
+    background-color: #071e22;
+    border: 5px solid #679289;
+    min-width: 1000px;
+}
+.page-events .event .all-numbers{
+    background-color: #679289;
+}
+.page-events .event .time-tour{
+    background-color: #1d7874;
+}
+.page-events .state-driver,
+.event .vedio, 
+.event .description-events {
+    border: 2px solid #1d7874;
+    padding-top: 15px;
+}
+
+
+/* End Events page */
+
+
+/* Start Actions page */
+
+.page-actions {
+    flex: 1;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));  
+}
+.page-actions .action {
+    background-color: #4b2e39;
+    border: 4px solid #77a0a9;
+}
+.page-actions .action div {
+    border: 1px solid #77a0a9;
+    border-radius: 6px 0 0 6px;
+}
+.page-actions .action div h4 {
+border-bottom: 1px solid #77a0a9;
+}
+.page-actions .action span {
+    background-color: #77a0a9;
+}
+
+@media (max-width: 767px) {
+    .page-actions {
+        flex: 1;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));  
+    }
+}
+
+/* End Actions page */
+
+
+
+/* Start Photos page */
+
+.page-photos {
+    flex: 1;
+    grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr));
+    overflow-x: auto;
+}
+.page-photos .photo {
+    background-color: #ca282c;
+    border: 4px solid #293646;
+    min-width: 1000px;
+}
+.page-photos .photo .path h4,
+.page-photos .photo .path button
+{
+    background-color: #293646;
+}
+.page-photos .photo .path p{
+    color: #709fd4;
+}
+.page-photos .photo .path button:hover {
+    width: 12%;
+    transition: 0.7s;
+}
+.page-photos img {
+    display: none;
+}
+/* End Photos page */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
